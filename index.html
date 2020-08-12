@@ -48,37 +48,52 @@
       <div class="tp-get-tokens-block">
         <h1>Design Token Generator</h1>
         <div class="form-group">
-          <label for="exampleInputEmail1">Figma Project ID</label>
+          <label for="projectId">Figma Project ID</label>
           <input
             type="text"
             class="form-control"
             id="projectId"
             placeholder="Enter Project ID"
           />
-          <small id="emailHelp" class="form-text text-muted"
+          <small id="projectIdHelp" class="form-text text-muted"
             >Project ID on your Figma Design</small
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Figma API Token</label>
+          <label for="apiToken">Figma API Token</label>
           <input
             type="text"
             class="form-control"
             id="apiToken"
             placeholder="Enter API Token"
           />
-          <small id="emailHelp" class="form-text text-muted"
+          <small id="apiTokenHelp" class="form-text text-muted"
             >Personal Access Token on Figma</small
           >
         </div>
-        <button class="cta-btn cta-btn_primary-dark" id="get-json-btn">
-          <div class="btn-loading btn-loading-hide">
+        <div class="form-group">
+          <label for="componentSelection">Component to generate</label>
+          <select class="form-control" id="componentSelection">
+            <option selected disabled value=""
+              >Please Select Component to Generate SCSS</option
+            >
+            <option value="grids">Grid</option>
+            <option value="spacers">Spacer</option>
+            <option value="colors">Color Pallete</option>
+            <option value="fonts">Typography</option>
+          </select>
+        </div>
+        <button class="cta-btn cta-btn_primary-dark" id="generate-btn">
+          <div class="btn-loading-generate btn-loading-hide">
             <div class="btn-loading__loader"></div>
           </div>
-          <span>Generate Design JSON</span>
+          <span>Generate DSL</span>
         </button>
       </div>
     </div>
-    <script src="scripts/main.js"></script>
+    <!-- <script src="scripts/main.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="scripts/other.js"></script>
   </body>
 </html>
