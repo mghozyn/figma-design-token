@@ -2,12 +2,14 @@ const generateJSON = document.getElementById('generate-btn');
 const loadDiv = document.querySelector('.btn-loading-generate');
 var componentSelection = document.getElementById('componentSelection');
 
-var figmaProjectId = document.getElementById('projectId').value;
-var figmaApiToken = document.getElementById('apiToken').value;
+var figmaProjectId;
+var figmaApiToken;
 var figmaComponent;
 
 function checkingFields() {
   figmaComponent = componentSelection[componentSelection.selectedIndex].value;
+  figmaProjectId = document.getElementById('projectId').value;
+  figmaApiToken = document.getElementById('apiToken').value;
 
   console.log(figmaComponent);
 
@@ -224,7 +226,7 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
     console.log('colors component generate');
     Object.assign(baseTokeensJSON.token.colors, getPalette(stylesArtboard));
     Object.keys(baseTokeensJSON.token.colors).map((item) => {
-        designToken.push(
+      designToken.push(
         `$token-colors-${item}: ${baseTokeensJSON.token.colors[item]};`
       );
     });
